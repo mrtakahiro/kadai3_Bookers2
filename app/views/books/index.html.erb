@@ -1,7 +1,15 @@
 <h2>User info</h2>
 
-<div>
-  <%= image_tag @user.get_image %>
-  <%= @user.name %>
-  <%= @user.introduction %>
-</div>
+<table class="table">
+  <tbody>
+    <tr><%= image_tag @user.get_image %></tr>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
