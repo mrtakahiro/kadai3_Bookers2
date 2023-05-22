@@ -9,10 +9,21 @@ class UsersController < ApplicationController
     @book = Book.new
   end
 
+  def update
+    @user = user.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(user.id)
+  end
+
   def index
     @book = Book.new
     @books = Book.all
     @users = User.all
     @user = current_user
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:title, :body)
   end
 end
