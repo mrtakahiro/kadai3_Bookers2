@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = current_user
     @book = Book.new
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = user.find(params[:id])
     @user.update(user_params)
+    flash[:notice] = "You have updated user successfully."
     redirect_to user_path(user.id)
   end
 
