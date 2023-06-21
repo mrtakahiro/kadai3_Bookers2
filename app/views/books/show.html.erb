@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <%= render "sidebar", book: @book, user: @user %>
+      <%= render "sidebar", book: @book_new, user: @user %>
         <% if @book.user == current_user %>
           <%= link_to "destroy", book_path(@book), method: :delete %>
         <% end %>
@@ -25,10 +25,10 @@
             </td>
             <% if current_user == @book_user %>
             <td>
-              <%= link_to "edit", edit_book_path(@book.id),class:"btn btn-success btn-sm" %>
+              <%= link_to "Edit", edit_book_path(@book.id),class:"btn btn-success btn-sm" %>
             </td>
             <td>
-              <%= link_to "destroy", book_path(@book.id),class:"btn btn-danger btn-sm", method: :delete, "date-confirm" => "本当に削除しますか？" %>
+              <%= link_to "Destroy", book_path(@book.id),class:"btn btn-danger btn-sm", method: :delete, "date-confirm" => "本当に削除しますか？" %>
             </td>
             <% end %>
           </tr>
